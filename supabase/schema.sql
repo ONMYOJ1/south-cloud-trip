@@ -42,6 +42,7 @@ create table if not exists public.car_options (
   deposit text,
   note text,
   link text,
+  tag text,
   created_by uuid references public.members(id),
   created_at timestamptz not null default now()
 );
@@ -56,6 +57,7 @@ create table if not exists public.stay_options (
   price text,
   detail text,
   link text,
+  tag text,
   selected boolean not null default false,
   created_by uuid references public.members(id),
   created_at timestamptz not null default now()
@@ -92,8 +94,13 @@ returns boolean language sql stable security definer set search_path = public as
   select exists (select 1 from public.members where trip_id = target_trip and auth_user_id = auth.uid() and role = 'admin');
 $$;
 
+create or replace function public.my_memberships()
+returns setof public.members language sql stable security definer set search_path = public as $$
+  select * from public.members where auth_user_id = auth.uid();
+$$;
+
 create or replace function public.join_trip(target_trip uuid, invite_code text, nickname text)
-returns public.members language plpgsql security definer set search_path = public as $$
+returns public.members language plpgsql security definer set search_path = public, extensions as $$
 declare
   joined_member public.members;
 begin

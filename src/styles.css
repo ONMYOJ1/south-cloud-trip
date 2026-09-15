@@ -131,4 +131,21 @@ h3 { margin: 6px 0 0; font-size: 16px; font-weight: 700; letter-spacing: .01em; 
 .form-grid input:focus { border-color: var(--sage); box-shadow: 0 0 0 2px #e3eee0; }
 .modal-actions { display: flex; justify-content: flex-end; gap: 8px; border-top: 1px solid var(--line); padding-top: 15px; }
 .button.primary { background: var(--sage-dark); border-color: var(--sage-dark); color: #fff; }
+.join-screen { min-height: 100vh; display: grid; place-items: center; padding: 24px 17px; }
+.join-card { width: min(430px, 100%); background: var(--paper); border: 1px solid var(--line); padding: 34px 30px 26px; box-shadow: 0 18px 60px rgba(37,39,36,.1); }
+.join-card h1 { font-size: 34px; margin-top: 30px; }
+.join-card h1 em { color: var(--ochre); }
+.join-intro { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 15px 0 24px; }
+.join-fields { display: flex; flex-direction: column; gap: 14px; }
+.join-fields label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 11px; }
+.join-fields input { width: 100%; border: 1px solid var(--line); background: #f8f6f0; padding: 12px 11px; color: var(--ink); font-size: 13px; outline: none; }
+.join-fields input:focus { border-color: var(--sage); box-shadow: 0 0 0 2px #e3eee0; }
+.join-error { display: flex; align-items: center; gap: 7px; margin-top: 14px; color: #9b5e36; background: var(--ochre-soft); font-size: 11px; padding: 10px 12px; }
+.join-submit { width: 100%; justify-content: center; margin-top: 20px; padding: 13px 12px; font-size: 13px; }
+.join-submit:disabled { opacity: .6; cursor: default; }
+.join-foot { color: #a1a39d; font-size: 10px; text-align: center; margin: 18px 0 0; }
+.boot-loading { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: var(--muted); font-size: 12px; }
+.boot-loading .brand-mark { width: 46px; height: 46px; font-size: 24px; }
+.footer-actions { display: flex; align-items: center; gap: 18px; }
+.footer-actions .text-button { color: #9b9e96; }
 @media (max-width: 800px) { .app-shell { padding: 0 17px 26px; } .topbar { height: 66px; } .sync-state { display: none; } .hero-panel { margin: 27px 0 25px; min-height: 380px; grid-template-columns: 1fr; } .hero-copy { padding: 30px 25px 25px; } .hero-photo { min-height: 145px; } .photo-label { right: 20px; bottom: 15px; } .photo-label strong { font-size: 37px; } .tabs { gap: 20px; } .tabs button { font-size: 12px; } .section-heading { align-items: flex-start; } h2 { font-size: 24px; } .option-grid { grid-template-columns: 1fr; } .decision-banner { display: block; } .banner-route { margin-top: 17px; flex-wrap: wrap; } .stay-card { grid-template-columns: 72px 1fr; padding: 15px 13px; } .stay-date { padding-right: 10px; } .stay-main { padding-left: 13px; } .stay-heading { align-items: flex-start; flex-direction: column; gap: 9px; } .stay-price { font-size: 14px; } .day-row { grid-template-columns: 51px 17px minmax(0, 1fr) 18px; gap: 10px; } .day-content li { width: 100%; } .status { display: none; } .footer { margin-top: 24px; } }
